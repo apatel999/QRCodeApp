@@ -1,0 +1,21 @@
+<div>
+  <form (submit)="handleSubmit()">
+    <div class="container">
+      <div class="column left">
+        <!-- Content for left column -->
+        <div class="row">
+          <input name="name" type="text" [(ngModel)]="name" class="form-control form-control-lg" id="name" placeholder="ex https://www.yourwebsite.com" />
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-outline-primary btn-lg">Generate QR Code</button>
+        </div>
+      </div>
+      <div class="column right">
+        <!-- Content for right column -->
+        <img *ngIf="octetStreamData$ | async as stream" [src]="stream" alt="Octet Stream Image" class="preview">
+      </div>
+    </div>
+
+  </form>
+  
+</div>
