@@ -13,8 +13,8 @@ export class ApiService {
   post(data):  Observable<any>{
     return this.http.post(this.apiUrl, data, { responseType: 'blob'} );
   }
-  get(data):  Observable<any>{
-    return this.http.get('https://localhost:44393/api/QRCode?value=test', { responseType: 'blob' } );
+  get(data): Observable<any>{
+    return this.http.get(this.apiUrl, { responseType: 'blob' } );
                             
   }
 }
