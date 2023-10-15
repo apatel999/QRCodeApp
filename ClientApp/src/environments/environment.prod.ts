@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://patelqrcodeapp.azurewebsites.net/api/'
+  apiUrl: 'http://locahost:8080/api/'
 };

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qrcode-api-deployment
+spec:
+  replicas: 3  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: qrcode-api
+  template:
+    metadata:
+      labels:
+        app: qrcode-api
+    spec:
+      containers:
+        - name: qrcode-api-container
+          image: patelinbox/qrcodeapp:4.0  # Replace with the image for your application
+          ports:
+            - containerPort: 80  # Port on which your application runs
+
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: qrcode-api-service
+spec:
+  selector:
+    app: qrcode-api  # Match this label with the label used in your Deployment
+  ports:
+    - protocol: TCP
+      port: 80  # Port on which your application runs inside the pods
+      targetPort: 80  # Port that the service forwards traffic to in the pods
+  type: ClusterIP  # Use ClusterIP for internal access

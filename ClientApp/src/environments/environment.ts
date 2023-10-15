@@ -1,10 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+//apiUrl: 'https://patelqrcodeapp.azurewebsites.net/api/'
+//apiUrl: 'http://localhost:8080/api/'
 export const environment = {
   production: false,
-  apiUrl: 'https://patelqrcodeapp.azurewebsites.net/api/'
+  apiUrl: 'http://qrcode-api.qrcode.com/api/' 
 };
 
 /*
