@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qrcode-api-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: qrcode-api.qrcode.com  # Replace with your desired hostname
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: qrcode-api-service
+                port:
+                  number: 80
